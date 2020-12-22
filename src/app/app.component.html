@@ -1,0 +1,18 @@
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo right">App</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"><a routerLink="">Home</a></li>
+      <li [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"><a routerLink="/login">Login</a></li>
+      <li [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"><a routerLink="/courses"  [queryParams]="{pagina:1}">Courses</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['courses', idCourse.value]">Course with Id</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <p>Enter the Course Id</p>
+  <input #idCourse>
+  <router-outlet></router-outlet>
+</div>
+
+
